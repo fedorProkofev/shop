@@ -1,6 +1,7 @@
 {
   "name": "shop",
   "version": "0.0.0",
+  "homepage": "https://fedorprokofev.github.io/shop/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
