@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1">
+    <div class="col" *ngFor="let book of books">
+      <div class="card my-3">
+        <div class="card-body">
+          <h5 class="card-title">{{book.name}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{book.category}}</h6>
+          <p class="card-text">{{book.description}} - {{book.isAvailable}}</p>
+          <div *ngIf="book.isAvailable; else elseBlock">
+            <a href="#" class="btn btn-primary">Buy it only for {{book.price}}$</a>
+          </div>
+          <ng-template #elseBlock>
+            <a disabled href="#" class="btn btn-primary disabled" tabindex="-1" role="button" aria-disabled="true">Out of stock</a>
+            &nbsp;<span class="text-muted">Last price {{book.price}}$</span>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
